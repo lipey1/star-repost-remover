@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Star Repost Remover",
+  "version": "1.2.6",
+  "description": "Seleciona republicados pelos elementos reais da página. Sem senha, rede externa ou coordenadas.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/*"
+      ],
+      "js": [
+        "note-parser.js",
+        "request-observer.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://www.instagram.com/your_activity/interactions/reposts*",
+        "https://www.instagram.com/p/*",
+        "https://www.instagram.com/reel/*"
+      ],
+      "js": [
+        "panel.js",
+        "reposts.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icon.png"
+      ],
+      "matches": [
+        "https://www.instagram.com/*"
+      ]
+    }
+  ],
+  "icons": {
+    "128": "icon.png"
+  }
+}

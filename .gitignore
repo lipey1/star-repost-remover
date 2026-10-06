@@ -1,0 +1,10 @@
+.env
+.env.*
+*.log
+*.zip
+node_modules/
+cookies*
+session*.json
+credentials*
+.DS_Store
+Thumbs.db

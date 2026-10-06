@@ -1,0 +1,11 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Star Repost Remover — prévia visual</title><style>body{background:#0f1012;color:#aaa;font:14px system-ui;margin:32px}body>p{max-width:420px}</style><p>Prévia visual local. Nenhuma chamada ao Instagram.</p><script src="panel.js"></script><script>
+const ui=createRepostPanel();
+ui.log('Nova execução iniciada. Modo individual.');
+ui.log('Preparação da API concluída.');
+ui.log('12 remoções confirmadas. Carregando próximo vídeo.','success');
+ui.log('Rate limit: esperando 30s antes de tentar novamente.','warn');
+ui.log('Item ignorado: resposta sem ID de repost.','error');
+ui.status.textContent='12 remoções confirmadas · 1 item ignorado';
+ui.start.onclick=()=>{ui.resetLogs();ui.status.textContent='Iniciando nova execução…';ui.log('Console limpo. Nova execução iniciada.');};
+ui.stop.onclick=()=>ui.log('Execução interrompida pelo usuário.','warn');
+</script></html>
